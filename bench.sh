@@ -68,7 +68,7 @@ speed_test() {
         up_speed=$(awk '/Upload/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         latency=$(awk '/Latency/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         if [[ -n "${dl_speed}" && -n "${up_speed}" && -n "${latency}" ]]; then
-            printf "\033[0;33m%-18s\033[0;32m%-18s\033[0;31m%-20s\033[0;36m%-12s\033[0m\n" " ${nodeName}" "${up_speed}" "${dl_speed}" "${latency}"
+            printf "\033[0;33m%-24s\033[0;32m%-20s\033[0;31m%-20s\033[0;36m%-12s\033[0m\n" " ${nodeName}" "${up_speed}" "${dl_speed}" "${latency}"
         fi
     fi
 }
@@ -82,28 +82,23 @@ speed() {
     speed_test '28922' 'Amsterdam, NL'
     speed_test '32155' 'Hong Kong, HK'
     speed_test '13623' 'Singapore, SG'
-    speed_test '18445' 'Chunghwa Mobile, Taipei, TW'
-    speed_test '11703' 'Taiwan Mobile, Taipei, TW'
-    speed_test '65092' 'GSL Networks, Taipei, TW'
-    speed_test '24429' 'Homeplus, Taipei, TW'
-    speed_test '13506' 'TAIFO Taiwan, Taipei, TW'
-    speed_test '2327' 'Far Eastone Telecommunications Co., Ltd., Taipei, TW'
-    speed_test '21030' 'Digicentre, Taipei, TW'
-    speed_test '2133' 'Taiwan Fixed Network, Taipei, TW'
-    speed_test '3842' 'Taiwan Fixed Network, Kaohsiung, TW'
-    speed_test '18458' 'Chunghwa Mobile, Kaohsiung, TW'
-    speed_test '2593' 'Far EasTone Telecommunications Co., Ltd, Kaohsiung, TW'
-    speed_test '12601' 'Kbro, Kaohsiung, TW'
-    speed_test '11713' 'Taiwan Mobile, Kaohsiung, TW'
-    speed_test '3841' 'Taiwan Fixed Network, Taichung, TW'
-    speed_test '18456' 'Chunghwa Mobile, Taichung, TW'
-    speed_test '2591' 'Far EasTone Telecommunications Co., Ltd, Taichung, TW'
-    speed_test '11707' 'Taiwan Mobile, Taichung, TW'
-    speed_test '7139' 'SoftEther Corporation, Tsukuba, JP'
-    speed_test '48463' 'IPA CyberLab 400G, Tokyo, JP'
-    speed_test '50686' 'GSL Networks, Tokyo, JP'
+    speed_test '18445' 'CHT, Taipei, TW'
+    speed_test '11703' 'TWM, Taipei, TW'
+    speed_test '65092' 'GSL, Taipei, TW'
+    speed_test '2327' 'FET Taipei, TW'
+    speed_test '2133' 'TFN, Taipei, TW'
+    speed_test '3842' 'TFN, Kaohsiung, TW'
+    speed_test '18458' 'CHT, Kaohsiung, TW'
+    speed_test '2593' 'FET, Kaohsiung, TW'
+    speed_test '11713' 'TWM, Kaohsiung, TW'
+    speed_test '3841' 'TFN, Taichung, TW'
+    speed_test '18456' 'CHT, Taichung, TW'
+    speed_test '2591' 'FET, Taichung, TW'
+    speed_test '11707' 'TWM, Taichung, TW'
+    speed_test '7139' 'Tsukuba, JP'
+    speed_test '50686' 'GSL, Tokyo, JP'
     speed_test '56935' 'Contabo, Tokyo, JP'
-    speed_test '28910' 'fdcservers.net, Tokyo, JP'
+    speed_test '28910' 'fdc, Tokyo, JP'
 }
 
 io_test() {
